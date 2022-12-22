@@ -1,17 +1,16 @@
-name: Future 2021
-slug: future2021
+name: Future 2021 custom
+slug: future2021custom
 type: theme
 version: 1.0.2
 description: Grav Future Imperfect by HTML5 UP (Version 2021)
 icon:  microchip
 author:
-  name: Pedro Moreno
-  email: webmaster@juanvillen.es
-  url: 
-homepage: https://github.com/pmoreno-rodriguez/grav-theme-future2021
-demo: http://future.juanvillen.es
+  name: Michael
+  email: pikim@web.de
+  url:
 keywords: future imperfect, html5up, theme, core, modern, fast, responsive, html5, css3
-bugs: https://github.com/pmoreno-rodriguez/grav-theme-future2021/issues
+homepage: https://github.com/pikim/grav-theme-future2021
+bugs: https://github.com/pikim/grav-theme-future2021/issues
 license: CC-BY-3.0
 
 dependencies:
@@ -39,167 +38,153 @@ form:
         type: bool
 
     header_section:
-      type: columns
+      type: fieldset
+      collapsible: true
+      collapsed: true
+      icon: header
+      title: FUTURE.ADMIN.THEME.HEADER
       fields:
-        header_fields:
-          type: column
-          fields:
-            header:
-              type: fieldset
-              collapsible: true
-              collapsed: true
-              icon: list
-              title: FUTURE.ADMIN.THEME.HEADER
-              fields:
 
-                favicon:
-                  type: file
-                  label: FUTURE.ADMIN.THEME.FAVICON
-                  destination: 'theme@:/images'
-                  multiple: false
-                  avoid_overwriting: false
-                  random_name: false
-                  toggleable: true
-                  filesize: 3
-                  accept: ['image/png', '.ico']
+        favicon:
+          type: file
+          label: FUTURE.ADMIN.THEME.FAVICON
+          destination: 'theme@:/images'
+          multiple: false
+          avoid_overwriting: false
+          random_name: false
+          toggleable: true
+          filesize: 3
+          accept: ['image/png', '.ico']
 
-                custom_logo:
-                  type: file
-                  label: FUTURE.ADMIN.THEME.CUSTOM_LOGO
-                  size: large
-                  destination: 'theme://images/logo'
-                  multiple: false
-                  markdown: true
-                  description: FUTURE.ADMIN.THEME.CUSTOM_LOGO_DESCRIPTION
-                  accept:
-                    - image/*
+        custom_logo:
+          type: file
+          label: FUTURE.ADMIN.THEME.CUSTOM_LOGO
+          size: large
+          destination: 'theme://images/logo'
+          multiple: false
+          markdown: true
+          description: FUTURE.ADMIN.THEME.CUSTOM_LOGO_DESCRIPTION
+          accept:
+            - image/*
 
-                custom_logo_mobile:
-                  type: file
-                  label: FUTURE.ADMIN.THEME.CUSTOM_LOGO_MOBILE
-                  size: large
-                  destination: 'theme://images/logo'
-                  multiple: false
-                  accept:
-                    - image/*
+        custom_logo_mobile:
+          type: file
+          label: FUTURE.ADMIN.THEME.CUSTOM_LOGO_MOBILE
+          size: large
+          destination: 'theme://images/logo'
+          multiple: false
+          accept:
+            - image/*
 
-                slogan:
-                  type: text
-                  label: FUTURE.ADMIN.THEME.SLOGAN
+        slogan:
+          type: text
+          label: FUTURE.ADMIN.THEME.SLOGAN
 
     blog_section:
-      type: columns
+      type: fieldset
+      collapsible: true
+      collapsed: true
+      icon: rss
+      title: FUTURE.ADMIN.THEME.BLOG_DEFAULTS
       fields:
-        blog_fields:
-          type: column
-          fields:
-            blog:
-              type: fieldset
-              collapsible: true
-              collapsed: true
-              icon: rss
-              title: FUTURE.ADMIN.THEME.BLOG_DEFAULTS
-              fields:
 
-                blog_page:
-                  type: text
-                  label: FUTURE.ADMIN.THEME.BLOG_PAGE
-                  help: FUTURE.ADMIN.THEME.BLOG_PAGE_HELP
-                  size: medium
-                  default: '/blog'
+        blog_page:
+          type: text
+          label: FUTURE.ADMIN.THEME.BLOG_PAGE
+          help: FUTURE.ADMIN.THEME.BLOG_PAGE_HELP
+          size: medium
+          default: '/blog'
 
-                sidebar:
-                  type: toggle
-                  label: FUTURE.ADMIN.THEME.SIDEBAR
-                  highlight: 1
-                  default: 1
-                  options:
-                    1: PLUGIN_ADMIN.ENABLED
-                    0: PLUGIN_ADMIN.DISABLED
-                  validate:
-                    type: bool
+        sidebar:
+          type: toggle
+          label: FUTURE.ADMIN.THEME.SIDEBAR
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
 
-                miniposts:
-                  type: toggle
-                  label: FUTURE.ADMIN.THEME.MINIPOSTS
-                  highlight: 1
-                  default: 1
-                  options:
-                    1: PLUGIN_ADMIN.ENABLED
-                    0: PLUGIN_ADMIN.DISABLED
-                  validate:
-                    type: bool
+        miniposts:
+          type: toggle
+          label: FUTURE.ADMIN.THEME.MINIPOSTS
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
 
-                miniposts_category:
-                  type: text
-                  markdown: true
-                  label: FUTURE.ADMIN.THEME.MINIPOSTS_CATEGORY
-                  description: FUTURE.ADMIN.THEME.MINIPOSTS_CATEGORY_DESCRIPTION
-                  size: medium
-                  default: 'minipost'
+        miniposts_category:
+          type: text
+          markdown: true
+          label: FUTURE.ADMIN.THEME.MINIPOSTS_CATEGORY
+          description: FUTURE.ADMIN.THEME.MINIPOSTS_CATEGORY_DESCRIPTION
+          size: medium
+          default: 'minipost'
 
-                miniposts_number:
-                  type: range
-                  label: FUTURE.ADMIN.THEME.MINIPOSTS_NUMBER
-                  description: FUTURE.ADMIN.THEME.MINIPOSTS_NUMBER_DESCRIPTION
-                  default: 3
-                  validate:
-                    min: 1
-                    max: 5
+        miniposts_number:
+          type: range
+          label: FUTURE.ADMIN.THEME.MINIPOSTS_NUMBER
+          description: FUTURE.ADMIN.THEME.MINIPOSTS_NUMBER_DESCRIPTION
+          default: 3
+          validate:
+            min: 1
+            max: 5
 
     footer_section:
-      type: columns
+      type: fieldset
+      collapsible: true
+      collapsed: true
+      icon: list-alt
+      title: FUTURE.ADMIN.THEME.FOOTER
       fields:
-        footer_fields:
-          type: column
-          fields:
-            footer:
-              type: fieldset
-              collapsible: true
-              collapsed: true
-              icon: list-alt
-              title: FUTURE.ADMIN.THEME.FOOTER
-              fields:
-                footer.title:
-                  type: text
-                  label: FUTURE.ADMIN.THEME.FOOTER_TITLE
-                footer.description:
-                  type: textarea
-                  rows: 5
-                  markdown: true
-                  label: FUTURE.ADMIN.THEME.FOOTER_DESCRIPTION
-                footer.copyright_text:
-                  type: text
-                  label: FUTURE.ADMIN.THEME.FOOTER_COPYRIGHT
-                footer.button_text:
-                  type: text
-                  label: FUTURE.ADMIN.THEME.FOOTER_BUTTON_TEXT
-                footer.button_url:
-                  type: text
-                  label: FUTURE.ADMIN.THEME.FOOTER_BUTTON_URL
+
+        footer.title:
+          type: text
+          label: FUTURE.ADMIN.THEME.FOOTER_TITLE
+        footer.description:
+          type: textarea
+          rows: 5
+          markdown: true
+          label: FUTURE.ADMIN.THEME.FOOTER_DESCRIPTION
+        footer.copyright_text:
+          type: text
+          label: FUTURE.ADMIN.THEME.FOOTER_COPYRIGHT
+        footer.button_text:
+          type: text
+          label: FUTURE.ADMIN.THEME.FOOTER_BUTTON_TEXT
+        footer.button_url:
+          type: text
+          label: FUTURE.ADMIN.THEME.FOOTER_BUTTON_URL
+
     social_icons_section:
-        type: fieldset
-        collapsible: true
-        collapsed: true
-        icon: share-alt
-        title: FUTURE.ADMIN.THEME.FOOTER_SOCIALS_ICONS
-        fields:
-          social:
-            name: social
-            type: list
-            style: vertical
-            collapsed: false
-            max: 5
-            fields:
-              .name:
-                type: text
-                label: FUTURE.ADMIN.THEME.FOOTER_SOCIALS_ICON_NAME
-              .url:
-                type: text
-                label: FUTURE.ADMIN.THEME.FOOTER_SOCIALS_ICON_URL
-              .icon:
-                type: iconpicker
-                label: FUTURE.ADMIN.THEME.FOOTER_SOCIALS_ICON_ICON
+      type: fieldset
+      collapsible: true
+      collapsed: true
+      icon: share-alt
+      title: FUTURE.ADMIN.THEME.FOOTER_SOCIALS_ICONS
+      fields:
+
+        social:
+          name: social
+          type: list
+          style: vertical
+          collapsed: false
+          max: 5
+          fields:
+            .name:
+              type: text
+              label: FUTURE.ADMIN.THEME.FOOTER_SOCIALS_ICON_NAME
+            .url:
+              type: text
+              label: FUTURE.ADMIN.THEME.FOOTER_SOCIALS_ICON_URL
+            .icon:
+              type: iconpicker
+              label: FUTURE.ADMIN.THEME.FOOTER_SOCIALS_ICON_ICON
+
     custommenu_options_section:
       type: fieldset
       collapsible: true
@@ -207,6 +192,7 @@ form:
       icon: bars
       title: FUTURE.ADMIN.THEME.CUSTOM_MENU_TITLE
       fields:
+
         custommenus.enabled:
           type: toggle
           label: FUTURE.ADMIN.THEME.CUSTOM_MENU_ENABLE
