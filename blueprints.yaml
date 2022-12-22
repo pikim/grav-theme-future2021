@@ -42,7 +42,7 @@ form:
       type: fieldset
       collapsible: true
       collapsed: true
-      icon: list
+      icon: header
       title: FUTURE.ADMIN.THEME.HEADER
       fields:
 
