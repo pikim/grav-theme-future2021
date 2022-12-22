@@ -1,10 +1,20 @@
 {% extends 'partials/base.html.twig' %}
 
+{% set base_url = page.parent.url %}
+{% set feed_url = base_url %}
 {% if page.header.show_breadcrumbs is defined %}
     {% set show_breadcrumbs = page.header.show_breadcrumbs %}
 {% else %}
     {% set show_breadcrumbs = true %}
 {% endif %}
+
+{% if base_url == '/' %}
+    {% set base_url = '' %}
+{% endif %}
+
+{% if base_url == base_url_relative %}
+    {% set feed_url = base_url~'/'~page.parent.slug %}
+{% endif  %}
 
 {% block menu %}
     {% include 'partials/sidebar_right.html.twig' %}
