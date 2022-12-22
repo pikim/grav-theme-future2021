@@ -39,44 +39,53 @@ form:
         type: bool
 
     header_section:
-      type: section
-      title: FUTURE.ADMIN.THEME.HEADER_SECTION
-      underline: true
+      type: columns
+      fields:
+        header_fields:
+          type: column
+          fields:
+            header:
+              type: fieldset
+              collapsible: true
+              collapsed: true
+              icon: list
+              title: FUTURE.ADMIN.THEME.HEADER
+              fields:
 
-    favicon:
-      type: file
-      label: FUTURE.ADMIN.THEME.FAVICON
-      destination: 'theme@:/images'
-      multiple: false
-      avoid_overwriting: false
-      random_name: false
-      toggleable: true
-      filesize: 3
-      accept: ['image/png', '.ico']
+                favicon:
+                  type: file
+                  label: FUTURE.ADMIN.THEME.FAVICON
+                  destination: 'theme@:/images'
+                  multiple: false
+                  avoid_overwriting: false
+                  random_name: false
+                  toggleable: true
+                  filesize: 3
+                  accept: ['image/png', '.ico']
 
-    custom_logo:
-      type: file
-      label: FUTURE.ADMIN.THEME.CUSTOM_LOGO
-      size: large
-      destination: 'theme://images/logo'
-      multiple: false
-      markdown: true
-      description: FUTURE.ADMIN.THEME.CUSTOM_LOGO_DESCRIPTION
-      accept:
-        - image/*
+                custom_logo:
+                  type: file
+                  label: FUTURE.ADMIN.THEME.CUSTOM_LOGO
+                  size: large
+                  destination: 'theme://images/logo'
+                  multiple: false
+                  markdown: true
+                  description: FUTURE.ADMIN.THEME.CUSTOM_LOGO_DESCRIPTION
+                  accept:
+                    - image/*
 
-    custom_logo_mobile:
-      type: file
-      label: FUTURE.ADMIN.THEME.CUSTOM_LOGO_MOBILE
-      size: large
-      destination: 'theme://images/logo'
-      multiple: false
-      accept:
-        - image/*
+                custom_logo_mobile:
+                  type: file
+                  label: FUTURE.ADMIN.THEME.CUSTOM_LOGO_MOBILE
+                  size: large
+                  destination: 'theme://images/logo'
+                  multiple: false
+                  accept:
+                    - image/*
 
-    slogan:
-      type: text
-      label: FUTURE.ADMIN.THEME.SLOGAN
+                slogan:
+                  type: text
+                  label: FUTURE.ADMIN.THEME.SLOGAN
 
     blog_section:
       type: columns
