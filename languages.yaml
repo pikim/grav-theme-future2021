@@ -14,7 +14,8 @@ en:
         BLOG_DEFAULTS: Blog Defaults
         BLOG_PAGE: Blog Page
         BLOG_PAGE_HELP: The route to the blog page when working with blog sidebar
-        MINIPOSTS: Enable Miniposts in Sidebar
+        SIDEBAR: Show sidebar on blog page
+        MINIPOSTS: Show miniposts in sidebar
         MINIPOSTS_NUMBER: Miniposts number to show
         MINIPOSTS_NUMBER_DESCRIPTION: Number of miniposts that will be showed in sidebar
         MINIPOSTS_CATEGORY: Miniposts category
@@ -156,7 +157,8 @@ de:
         BLOG_DEFAULTS: Blog-Optionen
         BLOG_PAGE: Blog-Seite
         BLOG_PAGE_HELP: Der Pfad zur Blog-Seite wenn die Blog-Seitenleiste aktiv ist
-        MINIPOSTS: Aktivieren Sie Miniposts in der Seitenleiste
+        SIDEBAR: Seitenleiste auf der Blog-Seite zeigen
+        MINIPOSTS: Miniposts in der Seitenleiste zeigen
         MINIPOSTS_NUMBER: Anzahl der anzuzeigenden Miniposts
         MINIPOSTS_NUMBER_DESCRIPTION: Anzahl der in der Seitenleiste anzuzeigenden Miniposts
         MINIPOSTS_CATEGORY: Kategorie für Miniposts

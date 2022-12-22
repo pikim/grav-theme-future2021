@@ -45,7 +45,15 @@
     {% include 'partials/pagination.html.twig' with {base_url: page.url, pagination: collection.params.pagination} %}
   {% endif %}
 
+	{% if theme_config.sidebar == false %}
 <section id="footer" class="align-center">
     {% include 'partials/footer.html.twig' %}
 </section>
+  {% endif %}
+{% endblock %}
+
+{% block sidebar %}
+  {% if theme_config.sidebar == true %}
+    {% include 'partials/sidebar_left.html.twig' %}
+  {% endif %}
 {% endblock %}

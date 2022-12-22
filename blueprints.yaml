@@ -99,6 +99,17 @@ form:
                   size: medium
                   default: '/blog'
 
+                sidebar:
+                  type: toggle
+                  label: FUTURE.ADMIN.THEME.SIDEBAR
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
+
                 miniposts:
                   type: toggle
                   label: FUTURE.ADMIN.THEME.MINIPOSTS
@@ -109,6 +120,7 @@ form:
                     0: PLUGIN_ADMIN.DISABLED
                   validate:
                     type: bool
+
                 miniposts_category:
                   type: text
                   markdown: true

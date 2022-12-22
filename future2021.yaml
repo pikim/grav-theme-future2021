@@ -34,6 +34,7 @@ social:
     name: Instagram
     url: 'https://www.instagram.com'
     icon: 'fa fa-instagram'
+sidebar: true
 miniposts: true
 miniposts_number: 3
 latestposts: true
