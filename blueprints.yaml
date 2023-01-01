@@ -1,17 +1,16 @@
-name: Future 2021
-slug: future2021
+name: Future 2021 custom
+slug: future2021custom
 type: theme
 version: 1.0.2
-description: Grav Future Imperfect by HTML5 UP (Version 2021)
+description: Grav Future Imperfect by HTML5 UP (Version 2021), custom version
 icon:  microchip
 author:
-  name: Pedro Moreno
-  email: webmaster@juanvillen.es
-  url: 
-homepage: https://github.com/pmoreno-rodriguez/grav-theme-future2021
-demo: http://future.juanvillen.es
+  name: Michael
+  email: pikim@web.de
+  url:
 keywords: future imperfect, html5up, theme, core, modern, fast, responsive, html5, css3
-bugs: https://github.com/pmoreno-rodriguez/grav-theme-future2021/issues
+homepage: https://github.com/pikim/grav-theme-future2021
+bugs: https://github.com/pikim/grav-theme-future2021/issues
 license: CC-BY-3.0
 
 dependencies:
