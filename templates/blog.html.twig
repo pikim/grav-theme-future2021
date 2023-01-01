@@ -30,8 +30,15 @@
   {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
     {% include 'partials/breadcrumbs.html.twig' %}
   {% endif %}
+{#
+  {% if show_pagination and config.plugins.pagination.enabled and collection.params.pagination %}
+    {% include 'partials/pagination.html.twig' with {base_url: page.url, pagination: collection.params.pagination} %}
+  {% endif %}
+#}
   {% for child in collection %}
+    {% if child.header.blog_hide is not defined or not child.header.blog_hide %}
       {% include 'partials/blog_item.html.twig' with {'page':child, 'truncate':true} %}
+    {% endif %}
   {% endfor %}
 
   {% if show_pagination and config.plugins.pagination.enabled and collection.params.pagination %}

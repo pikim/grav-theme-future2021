@@ -1,0 +1,99 @@
+ul.posts {
+  margin-bottom: 0.25rem;
+}
+
+ul.posts li {
+  margin: 0.25em 0 0 0;
+  padding: 0.25em 0 0 0;
+}
+
+ul.posts article {
+  -moz-flex-direction: row;
+  flex-direction: row;
+}
+
+ul.posts article header h3 {
+  margin-bottom: 0.25em;
+}
+
+.post img {
+  max-width: 100%;
+}
+
+.post .modular-row.gallery-container {
+  margin-bottom: 2.75rem;
+}
+
+#header .dropdown li ul li a {
+  padding: 0.5rem 0.8rem;
+  line-height: 1.5em;
+}
+
+.menulink {
+  margin-top: -0.3rem;
+}
+
+#intro .logo:before {
+  background-image: false;
+  display: none;
+}
+
+.form-field {
+  margin-bottom: 1em;
+}
+
+.form-label .inline {
+  margin-bottom: 0;
+}
+
+.notices.blue p {
+  margin: 0.5em 0;
+}
+
+.notices.error.red,
+.notices.success.green {
+  margin-bottom: 2em;
+}
+
+.notices.error.red p,
+.notices.success.green p {
+  margin: 0.75em 0;
+}
+
+.bs-reg {
+  border-bottom: solid 1px rgba(160, 160, 160, 0.3);
+  padding-bottom: 1.2em;
+  margin-bottom: 2em;
+}
+
+.bs-reg.contact {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.bs-reg.team {
+  padding-bottom: 2em;
+}
+
+.content-padding.simplesearch p {
+  margin-bottom: 0;
+}
+
+.search-item {
+  margin-bottom: 0;
+}
+
+.search-row {
+  border-bottom: solid 1px rgba(160, 160, 160, 0.3);
+  padding-bottom: 1.25em;
+  margin-bottom: 1.5em;
+}
+
+.search-row:last-child {
+  border: 0;
+  padding-bottom: 0;
+}
+
+.search-row a {
+  border: 0;
+}

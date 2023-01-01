@@ -34,10 +34,11 @@
 
 {% if page.header.primaryImage %}
   <a href="{{ page.url }}" class="image featured">{{ page.media[page.header.primaryImage].cropZoom(1038,437).loading('lazy').html(page.title, page.title)|raw }}</a>
-{% else %}
+{% elseif page.media.images %}
   <a href="{{ page.url }}" class="image featured">{{ page.media.images|first.cropZoom(1038,437).loading('lazy').html(page.title, page.title)|raw }}</a>
 {% endif %}
 
+{% if page.header.blog_hide_body is not defined or not page.header.blog_hide_body %}
   <div itemprop="articleBody">
   {% if page.header.continue_link is sameas(false) %}
       {{ page.content|raw }}
@@ -53,6 +54,7 @@
       {% set show_prev_next = true %}
   {% endif %}
   </div>
+{% endif %}
 
   <footer>
     <ul class="actions">
@@ -66,7 +68,7 @@
       {% if not page.isLast %}
       <li><a class="button" href="{{ page.prevSibling.url }}"><i class="fa fa-chevron-left"></i> {{'FUTURE.BLOG.ITEM.PREV_POST'|t}}</a></li>
       {% endif %}
-      {% if not page.isFirst %}
+    {% if not page.isFirst %}
       <li><a class="button" href="{{ page.nextSibling.url }}">{{'FUTURE.BLOG.ITEM.NEXT_POST'|t}} <i class="fa fa-chevron-right"></i></a></li>
       {% endif %}
     {% endif %}
