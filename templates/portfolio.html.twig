@@ -23,15 +23,16 @@
       <h2>{{ page.header.title }}</h2>
     {% if page.header.subtitle %}
       <p>{{ page.header.subtitle }}</p>
-            {% endif %}	
-            </div>
-        </header>
-        {% if page.header.primaryImage %}
-            {{ page.media[page.header.primaryImage].cropZoom(1038,437).loading('lazy').html(page.title, page.title, 'image featured')|raw }}
-        {% endif %}
-        
-        {{ page.content|raw}}
-    <!-- Portfolio -->
+    {% endif %}
+    </div>
+  </header>
+    {% if page.header.primaryImage %}
+        {{ page.media[page.header.primaryImage].cropZoom(1038,437).loading('lazy').html(page.title, page.title, 'image featured')|raw }}
+    {% endif %}
+    
+    {{ page.content|raw}}
+
+<!-- Portfolio -->
     {% block portfolio %}  
         <section>   
         <div class="row aln-center">
@@ -46,9 +47,9 @@
         </div>
         </section>
     {% endblock %}
-    </article>
+</article>
 
-    <section id="footer" class="align-center">
-        {% include 'partials/footer.html.twig' %}
-    </section>
+<section id="footer" class="align-center">
+    {% include 'partials/footer.html.twig' %}
+</section>
 {% endblock %}
