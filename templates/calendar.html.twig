@@ -30,7 +30,7 @@
 {% set nextYearUrl = page.url ~ '/year:' ~ calendar.nextYear|date('Y') ~ '/month:' ~ calendar.nextYear|date('m') %}
 {% set prevMonthUrl = page.url ~ '/year:' ~ calendar.prev.date|date('Y') ~ '/month:' ~ calendar.prev.date|date('m') %}
 {% set nextMonthUrl = page.url ~ '/year:' ~ calendar.next.date|date('Y') ~ '/month:' ~ calendar.next.date|date('m') %}
-{% set currMonthUrl = page.url ~ '/year:' ~ now|date('Y') ~ '/month:' ~ now|date('m') %}
+{% set currMonthUrl = page.url %}
 
 {% set prevYearTitle = calendar.prevYear|td(null, config.plugins.events.calendar.header) %}
 {% set nextYearTitle = calendar.nextYear|td(null, config.plugins.events.calendar.header) %}
