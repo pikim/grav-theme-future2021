@@ -6,7 +6,7 @@
       <h2 itemprop="headline">{{ page.title }}</h2>
     </div>
     <div class="meta">
-      <time class="published" itemprop="datePublished" datetime="{{page.date|dateTranslate(grav.config.system.pages.dateformat.short)}}">{{ page.date|dateTranslate(grav.config.system.pages.dateformat.short)}}</time>
+      <time class="published" itemprop="datePublished" datetime="{{page.date|td(null, grav.config.system.pages.dateformat.short)}}">{{ page.date|td(null, grav.config.system.pages.dateformat.short)}}</time>
     </div>
   </header>
 

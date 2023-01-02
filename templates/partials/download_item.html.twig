@@ -16,6 +16,6 @@
     <a href="{{ file.url }}">
         {{ file.filename }}<br/>
         {{ size|number_format(2, '.', ',') }}{{ unit }}  |
-        {{ file.modified|dateTranslate(grav.config.system.pages.dateformat.long) }}
+        {{ file.modified|td(null, grav.config.system.pages.dateformat.long) }}
     </a>
 </td>

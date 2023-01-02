@@ -25,7 +25,7 @@
       {% endif %}
     </div>
     <div class="meta">
-      <time class="published" itemprop="datePublished" datetime="{{page.date|dateTranslate(grav.config.system.pages.dateformat.short)}}">{{ page.date|dateTranslate(grav.config.system.pages.dateformat.short)}}</time>
+      <time class="published" itemprop="datePublished" datetime="{{page.date|td(null, grav.config.system.pages.dateformat.short)}}">{{ page.date|td(null, grav.config.system.pages.dateformat.short)}}</time>
       {% if author %}
         <a href="{{ base_url }}/author{{ config.system.param_sep }}{{ author }}" itemprop="keywords" class="author">{{ tag }}<span class="name" rel="author">{{ author }}</span>{% if page.header.avatarImage %}<img src="{{ page.media[page.header.avatarImage].url|e}}" alt="{{ author }}" />{% endif %}</a>
       {% endif %}

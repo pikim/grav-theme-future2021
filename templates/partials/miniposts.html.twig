@@ -11,7 +11,7 @@
     <article class="mini-post">
         <header>
             <h3><a href="{{ p.url }}">{{ p.title }}</a></h3>
-            <time class="published" datetime="{{p.date|dateTranslate(grav.config.system.pages.dateformat.short)}}">{{ p.date|dateTranslate(grav.config.system.pages.dateformat.short)}}</time>
+            <time class="published" datetime="{{p.date|td(null, grav.config.system.pages.dateformat.short)}}">{{ p.date|td(null, grav.config.system.pages.dateformat.short)}}</time>
             <a href="{{ p.url }}" class="author"><img src="{{ p.media[p.header.avatarImage].url}}" alt="" /></a>
         </header>
         <a href="{{ p.url }}" class="image">

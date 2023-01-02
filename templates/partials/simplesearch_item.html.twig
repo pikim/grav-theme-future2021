@@ -12,7 +12,7 @@
         </div>
 
         <div class="search-details">
-            <span class="search-date">{{ page.date|dateTranslate(config.system.pages.dateformat.short) }}</span>
+            <span class="search-date">{{ page.date|td(null, config.system.pages.dateformat.short) }}</span>
         </div>
 
 {#        <p>{{ page.summary|raw }}</p>#}
