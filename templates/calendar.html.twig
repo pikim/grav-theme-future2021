@@ -76,8 +76,8 @@
 				<tr class="calendar-line">
 				{% set startDow = (calendar.date|date('w') +6-fdowOffset) % 7 %}
 				{% set dow = startDow %}
-                                {% set month = "now"|date("F") %}
-                                {% set year = "now"|date("Y") %}
+				{% set month = "now"|date("F") %}
+				{% set year = "now"|date("Y") %}
 				{% for day in range(1,calendar.daysInMonth) %}
 					{% if loop.first and startDow != 0 %}
 						<td colspan="{{ startDow }}"></td>
