@@ -3,6 +3,33 @@ streams:
     theme:
       type: ReadOnlyStream
       prefixes:
-        '':
-          - user/themes/future2021custom
-          - user/themes/future2021
+        '': [user/themes/future2021custom, user/themes/future2021]
+production-mode: true
+slogan: null
+blog_page: /aktuelles/neuigkeiten
+sidebar: false
+miniposts: true
+miniposts_category: minipost
+miniposts_number: 3
+latestposts: true
+footer:
+  title: null
+  description: null
+  copyright_text: null
+  button_text: null
+  button_url: null
+custommenus:
+  enabled: false
+custom_logo:
+  user/images/favicon.png:
+    name: favicon.png
+    type: image/png
+    size: 107740
+    path: user/images/favicon.png
+favicon:
+  user/images/favicon.png:
+    name: favicon.png
+    type: image/png
+    size: 107740
+    path: user/images/favicon.png
+custom_logo_mobile: {  }
