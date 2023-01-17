@@ -3,7 +3,7 @@
 <article class="post" itemprop="liveBlogUpdate" itemscope itemtype="http://schema.org/BlogPosting">
   <header>
     <div class="title">
-      <h2 itemprop="headline">{{ page.title }}</h2>
+      <h2 itemprop="headline">{{ page.author }}</h2>
     </div>
     <div class="meta">
       <time class="published" itemprop="datePublished" datetime="{{page.date|td(null, grav.config.system.pages.dateformat.short)}}">{{ page.date|td(null, grav.config.system.pages.dateformat.short)}}</time>
@@ -11,7 +11,7 @@
   </header>
 
   <div itemprop="articleBody">
-    {{ page.content|raw }}
+    {{ page.text|raw }}
   </div>
 
   <footer>
