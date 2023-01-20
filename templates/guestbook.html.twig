@@ -3,18 +3,18 @@
 {% set collection = grav.get('flex').collection('guestbook') %}
 
 {% if page.header.show_breadcrumbs is defined %}
-    {% set show_breadcrumbs = page.header.show_breadcrumbs %}
+  {% set show_breadcrumbs = page.header.show_breadcrumbs %}
 {% else %}
-    {% set show_breadcrumbs = true %}
+  {% set show_breadcrumbs = true %}
 {% endif %}
 {% if page.header.show_pagination is defined %}
-    {% set show_pagination = page.header.show_pagination %}
+  {% set show_pagination = page.header.show_pagination %}
 {% else %}
-    {% set show_pagination = true %}
+  {% set show_pagination = true %}
 {% endif %}
 
 {% block menu %}
-    {% include 'partials/sidebar_right.html.twig' %}
+  {% include 'partials/sidebar_right.html.twig' %}
 {% endblock %}
 
 {% block content %}
@@ -22,38 +22,38 @@
     {% include 'partials/breadcrumbs.html.twig' %}
   {% endif %}
 
-<article class="post">
-  <header>
-    <div class="title">
-      <h2>{{ page.header.title }}</h2>
-    {% if page.header.subtitle %}
-      <p>{{ page.header.subtitle }}</p>
-    {% endif %}
-    </div>
-  </header>
-  {{ page.content|raw}}
-
-  {% include "forms/form.html.twig" %}
-
-  {% block item %}
-    {% if collection|length %}
-      <h2>{{'PLUGIN_GUESTBOOK.MESSAGES'|t}}</h2>
-
-      {% for child in collection|reverse %}
-        {% if (child.moderated and config.plugins.guestbook.moderation) or (not config.plugins.guestbook.moderation) %}
-          {% include 'partials/guestbook_item.html.twig' with {'page':child, 'truncate':false} %}
+  <article class="post">
+    <header>
+      <div class="title">
+        <h2>{{ page.header.title }}</h2>
+        {% if page.header.subtitle %}
+          <p>{{ page.header.subtitle }}</p>
         {% endif %}
-      {% endfor %}
-    {% endif %}
-{#
-    {% if show_pagination and config.plugins.pagination.enabled and collection.params.pagination %}
-      {% include 'partials/pagination.html.twig' with {base_url: page.url, pagination: collection.params.pagination} %}
-    {% endif %}
-#}
-  {% endblock %}
-</article>
+      </div>
+    </header>
+    {{ page.content|raw}}
 
-<section id="footer" class="align-center">
+    {% include "forms/form.html.twig" %}
+
+    {% block item %}
+      {% if collection|length %}
+        <h2>{{'PLUGIN_GUESTBOOK.MESSAGES'|t}}</h2>
+
+        {% for child in collection|reverse %}
+          {% if (child.moderated and config.plugins.guestbook.moderation) or (not config.plugins.guestbook.moderation) %}
+            {% include 'partials/guestbook_item.html.twig' with {'page':child, 'truncate':false} %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+{#
+      {% if show_pagination and config.plugins.pagination.enabled and collection.params.pagination %}
+        {% include 'partials/pagination.html.twig' with {base_url: page.url, pagination: collection.params.pagination} %}
+      {% endif %}
+#}
+    {% endblock %}
+  </article>
+
+  <section id="footer" class="align-center">
     {% include 'partials/footer.html.twig' %}
-</section>
+  </section>
 {% endblock %}

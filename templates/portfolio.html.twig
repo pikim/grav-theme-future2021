@@ -3,82 +3,81 @@
 {% set columns = page.header.layout == 'standard' ? 'col-4 col-6-medium col-12-small' : 'col-6 col-12-small'  %}
 
 {% if page.header.show_breadcrumbs is defined %}
-    {% set show_breadcrumbs = page.header.show_breadcrumbs %}
+  {% set show_breadcrumbs = page.header.show_breadcrumbs %}
 {% else %}
-    {% set show_breadcrumbs = true %}
+  {% set show_breadcrumbs = true %}
 {% endif %}
 
 {% block menu %}
-    {% include 'partials/sidebar_right.html.twig' %}
+  {% include 'partials/sidebar_right.html.twig' %}
 {% endblock %}
 
 {% block content %}
-    {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
-        {% include 'partials/breadcrumbs.html.twig' %}
-    {% endif %}
+  {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
+    {% include 'partials/breadcrumbs.html.twig' %}
+  {% endif %}
 
-<article class="post">
-  <header>
-    <div class="title">
-      <h2>{{ page.header.title }}</h2>
-    {% if page.header.subtitle %}
-      <p>{{ page.header.subtitle }}</p>
-    {% endif %}
-    </div>
-  </header>
+  <article class="post">
+    <header>
+      <div class="title">
+        <h2>{{ page.header.title }}</h2>
+        {% if page.header.subtitle %}
+          <p>{{ page.header.subtitle }}</p>
+        {% endif %}
+      </div>
+    </header>
+
     {{ page.content|raw}}
 
-<!-- Portfolio -->
-{% block portfolio %}
-  <section>
+    <!-- Portfolio -->
+    {% block portfolio %}
+      <section>
+        <div class="row aln-center">
+          {% for item in page.media.images %}
+            <div class="{{columns}} portfolio_item">
+              {% set url = item.url|e|replace({'?title': ''}) %}
+              {% if item.title|slice(0, 9) == '<img alt=' %}
+                <a href="{{ url }}" class="glightbox" data-width="100%" data-zoomable="true">
+              {% else %}
+                <a href="{{ url }}" class="glightbox" data-width="100%" data-zoomable="true" data-glightbox='title: {{item.title}}; description: {{item.description|raw}}'>
+              {% endif %}
+                <span class="image fit"><img src="{{ url }}" alt="image"/></span>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    {% endblock %}
+  </article>
+
+  <section id="footer" class="align-center">
+    {% include 'partials/footer.html.twig' %}
+  </section>
+{% endblock %}
+
+
+  {#
+  <!-- Portfolio -->
+  {% block portfolio %}
+    <section>
     <div class="row aln-center">
       {% for item in page.media.images %}
+      {% set data_glb = '' %}
+      {% set data_glb = data_glb ~ (item.title ? ('title:' ~ item.title ~ ';') : '') %}
+      {% set data_glb = data_glb ~ (item.description ? ('description:' ~ item.description|raw ~ ';') : '') %}
+      {{item.title}}
       <div class="{{columns}} portfolio_item">
-        {% set url = item.url|e|replace({'?title': ''}) %}
-        {% if item.title|slice(0, 9) == '<img alt=' %}
-        <a href="{{ url }}" class="glightbox" data-width="100%" data-zoomable="true">
+        {% if data_glb %}
+        <a href="{{ item.url(false)|e }}" class="glightbox" data-width="100%" data-zoomable="true" data-glightbox="{{ data_glb }}">
         {% else %}
-        <a href="{{ url }}" class="glightbox" data-width="100%" data-zoomable="true" data-glightbox='title: {{item.title}}; description: {{item.description|raw}}'>
+        <a href="{{ item.url(false)|e }}" class="glightbox" data-width="100%" data-zoomable="true">
         {% endif %}
-          <span class="image fit"><img src="{{ url }}" alt="image" /></span>
+          <span class="image fit"><img src="{{ item.url|e }}" alt="image" /></span>
         </a>
       </div>
       {% endfor %}
     </div>
-  </section>
-{% endblock %}
-</article>
-
-<section id="footer" class="align-center">
-    {% include 'partials/footer.html.twig' %}
-</section>
-{% endblock %}
-
-
-{#
-
-<!-- Portfolio -->
-{% block portfolio %}
-  <section>
-  <div class="row aln-center">
-    {% for item in page.media.images %}
-    {% set data_glb = '' %}
-    {% set data_glb = data_glb ~ (item.title ? ('title:' ~ item.title ~ ';') : '') %}
-    {% set data_glb = data_glb ~ (item.description ? ('description:' ~ item.description|raw ~ ';') : '') %}
-    {{item.title}}
-    <div class="{{columns}} portfolio_item">
-      {% if data_glb %}
-      <a href="{{ item.url(false)|e }}" class="glightbox" data-width="100%" data-zoomable="true" data-glightbox="{{ data_glb }}">
-      {% else %}
-      <a href="{{ item.url(false)|e }}" class="glightbox" data-width="100%" data-zoomable="true">
-      {% endif %}
-        <span class="image fit"><img src="{{ item.url|e }}" alt="image" /></span>
-      </a>
-    </div>
-    {% endfor %}
-  </div>
-    </section>
-{% endblock %}
-</article>
-
-#}
+      </section>
+  {% endblock %}
+  </article>
+  #}
