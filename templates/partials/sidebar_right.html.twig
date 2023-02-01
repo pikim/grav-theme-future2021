@@ -34,7 +34,7 @@
       {% include 'partials/taxonomylist.html.twig' with {'base_url':new_base_url, 'taxonomy':'tag'} %}
     </section>
   {% endif %}
-  {% if config.plugins.login.enabled %}
+  {% if config.plugins.login.enabled and 0 %}
     <section>
       <ul class="actions stacked">
         <li><a href="#" class="button large fit">{{ 'FUTURE.LOGIN'|t }}</a></li>
