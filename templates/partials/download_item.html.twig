@@ -1,3 +1,14 @@
+{#{{dump(file)}}#}
+
+{% set icon = "fa-question" %}
+{% if file.extension == "pdf" %}
+    {% set icon = "fa-file-pdf" %}
+{% elseif file.mime == "image/svg+xml" %}
+    {% set icon = "fa-image" %}
+{% elseif file.mime == "video/x-matroska" %}
+    {% set icon = "fa-video" %}
+{% endif %}
+
 {% set size = file.size/1024 %}
 {% set unit = "kB" %}
 {% if size > 1023 %}
@@ -5,12 +16,7 @@
     {% set unit = "MB" %}
 {% endif %}
 <td style="text-align: right; vertical-align: middle;">
-    <a href="{{ file.url }}">
-        <!--<ul class="icons">
-            <li><i class="fa fa-file-pdf"></i></li>
-        </ul>-->
-        <img src="https://github.com/r00t0vi4/mime-icons-packs/raw/master/mime-icons-pack-1/src/{{file.extension}}.png">
-    </a>
+    <a href="{{ file.url }}"><i class="fa {{ icon }}"></i></a>
 </td>
 <td style="text-align: left; vertical-align: middle;">
     <a href="{{ file.url }}">
