@@ -27,9 +27,9 @@
     {{ page.content|raw}}
 
     <table>
-      {% for file in page.media.files %}
+      {% for file in page.media.all %}
         {% for type in page.header.file_types %}
-          {% if file.extension == type.extension or type.extension == '*' %}
+          {% if file.extension == type or type == '*' %}
             <tr>
               {% include 'partials/download_item.html.twig' with {file: file} %}
             </tr>
