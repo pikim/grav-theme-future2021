@@ -212,7 +212,7 @@ de:
 
       BLOG:
         BLOG_TAB: Blog-Einstellungen
-        BLOG_CONTENT_TITLE: Content Definition
+        BLOG_CONTENT_TITLE: Inhaltseinstellungen
         BLOG_CONTENT_ITEMS: Artikel
         BLOG_CONTENT_ITEMS_LIMIT: Maximale Artikel-Anzahl
         BLOG_CONTENT_ITEMS_ORDER_BY: Sortieren nach
